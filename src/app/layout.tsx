@@ -36,7 +36,7 @@ const caslon = Libre_Caslon_Text({
   variable: "--font-caslon",
   subsets: ["latin"],
   weight: ["400", "700"],
-  style: "italic",
+  style: ["normal", "italic"],
   display: "swap",
   preload: false,
 });

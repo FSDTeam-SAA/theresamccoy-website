@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { assets } from "../constants";
 import { LandingHeader } from "./landing-header";
@@ -40,7 +41,7 @@ export function Hero() {
         </p>
         <div className={styles.heroButtons}>
           <Button asChild className={styles.pill}>
-            <a href="#marketplace">
+            <Link href="/marketplace">
               Find a Bookkeeper
               <Image
                 src={assets.arrow}
@@ -49,7 +50,7 @@ export function Hero() {
                 height={16}
                 className={styles.arrow}
               />
-            </a>
+            </Link>
           </Button>
           <Button
             asChild

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { assets, navigation } from "../constants";
 import styles from "../landing.module.css";
 
@@ -10,24 +11,28 @@ const socialIcons = [
   { name: "YouTube", src: assets.youtube },
 ];
 
-export function LandingFooter() {
+export function LandingFooter({
+  logoSrc = assets.logo,
+  facebookSrc = assets.facebook,
+  compactLogo = false,
+}: { logoSrc?: string; facebookSrc?: string; compactLogo?: boolean } = {}) {
   return (
     <footer id="contact" className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerGrid}>
           <div className={styles.footerBrand}>
-            <a
-              href="#home"
-              className={styles.logo}
+            <Link
+              href="/"
+              className={`${styles.logo} ${compactLogo ? styles.footerCompactLogo : ""}`}
               aria-label="The Bookkeepers Marketplace home"
             >
               <Image
-                src={assets.logo}
+                src={logoSrc}
                 alt="The Bookkeepers Marketplace"
-                width={2720}
-                height={880}
+                width={compactLogo ? 1254 : 2720}
+                height={compactLogo ? 1254 : 880}
               />
-            </a>
+            </Link>
             <p>
               MyCPA OnCall connects business owners with fully vetted
               bookkeeping professionals
@@ -36,7 +41,7 @@ export function LandingFooter() {
               {socialIcons.map((social) => (
                 <span key={social.name} className={styles.socialIcon}>
                   <Image
-                    src={social.src}
+                    src={social.name === "Facebook" ? facebookSrc : social.src}
                     alt={social.name}
                     width={24}
                     height={24}
@@ -56,17 +61,17 @@ export function LandingFooter() {
                 navigation[4],
                 navigation[5],
               ].map(({ label, href }) => (
-                <a key={label} href={href}>
+                <Link key={label} href={href}>
                   {label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
           <div>
             <h3>Support</h3>
             <nav aria-label="Support" className={styles.footerLinks}>
-              <a href="#apply">Bookkeeper</a>
-              <a href="#marketplace">Explore</a>
+              <Link href="/#apply">Bookkeeper</Link>
+              <Link href="/marketplace">Explore</Link>
             </nav>
           </div>
           <div className={styles.footerContact}>

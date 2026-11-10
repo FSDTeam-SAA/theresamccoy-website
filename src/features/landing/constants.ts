@@ -48,11 +48,11 @@ export const assets = {
 } as const;
 
 export const navigation = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Marketplace", href: "#marketplace" },
-  { label: "Training", href: "#training" },
-  { label: "Apply", href: "#apply" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Marketplace", href: "/marketplace" },
+  { label: "Training", href: "/training" },
+  { label: "Apply", href: "/#apply" },
   { label: "Contact", href: "#contact" },
 ] as const;
 

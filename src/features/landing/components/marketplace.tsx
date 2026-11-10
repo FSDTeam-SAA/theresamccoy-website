@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { assets, processSteps } from "../constants";
 import styles from "../landing.module.css";
@@ -12,7 +13,7 @@ export function Marketplace() {
         aria-labelledby="marketplace-heading"
       >
         <Button asChild className={`${styles.pill} ${styles.eyebrow}`}>
-          <a href="#profiles">
+          <Link href="/marketplace">
             Explore the Marketplace
             <Image
               src={assets.marketplaceArrow}
@@ -21,7 +22,7 @@ export function Marketplace() {
               height={16}
               className={styles.arrow}
             />
-          </a>
+          </Link>
         </Button>
         <div className={styles.marketplaceIntro} id="about">
           <h2 className={styles.sectionHeading} id="marketplace-heading">
@@ -66,7 +67,7 @@ export function Marketplace() {
             sizes="(max-width: 767px) 90vw, 53vw"
           />
           <Button asChild className={`${styles.pill} ${styles.profileExplore}`}>
-            <a href="#training">
+            <Link href="/marketplace">
               Explore the Marketplace
               <Image
                 src={assets.profileArrow}
@@ -75,7 +76,7 @@ export function Marketplace() {
                 height={24}
                 className={styles.arrow}
               />
-            </a>
+            </Link>
           </Button>
           <Button
             asChild

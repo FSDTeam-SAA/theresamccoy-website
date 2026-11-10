@@ -8,14 +8,20 @@ import { Button } from "@/components/ui/button";
 import { assets, navigation } from "../constants";
 import styles from "../landing.module.css";
 
-export function LandingHeader() {
+export function LandingHeader({
+  active = "Home",
+  light = false,
+}: {
+  active?: "Home" | "About" | "Marketplace" | "Training";
+  light?: boolean;
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuToggle = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className={styles.header}>
-      <a
-        href="#home"
+    <header className={`${styles.header} ${light ? styles.headerLight : ""}`}>
+      <Link
+        href="/"
         className={styles.logo}
         aria-label="The Bookkeepers Marketplace home"
       >
@@ -26,16 +32,16 @@ export function LandingHeader() {
           height={880}
           priority
         />
-      </a>
+      </Link>
       <nav aria-label="Main navigation" className={styles.desktopNav}>
         {navigation.map(({ label, href }) => (
-          <a
+          <Link
             key={label}
             href={href}
-            aria-current={label === "Home" ? "page" : undefined}
+            aria-current={label === active ? "page" : undefined}
           >
             {label}
-          </a>
+          </Link>
         ))}
       </nav>
       <div className={styles.headerActions}>
@@ -47,7 +53,7 @@ export function LandingHeader() {
           Sign In
         </Link>
         <Button asChild className={styles.pill}>
-          <a href="#marketplace">Get Started</a>
+          <Link href="/marketplace">Get Started</Link>
         </Button>
       </div>
       <Button
@@ -75,9 +81,9 @@ export function LandingHeader() {
           }}
         >
           {navigation.map(({ label, href }) => (
-            <a key={label} href={href} onClick={() => setMenuOpen(false)}>
+            <Link key={label} href={href} onClick={() => setMenuOpen(false)}>
               {label}
-            </a>
+            </Link>
           ))}
           <Link href="/api/auth/signin" prefetch={false}>
             Sign In

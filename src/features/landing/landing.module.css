@@ -73,6 +73,7 @@
   border-radius: 24px;
   overflow: clip;
   color: #e7eded;
+  padding: 22px 0;
 }
 .heroPhoto {
   object-fit: cover;
@@ -1718,4 +1719,28 @@
   .footerGrid {
     grid-template-columns: 500fr 292fr 292fr 400fr;
   }
+}
+
+.headerLight {
+  color: #063231;
+}
+.headerLight .desktopNav a:hover,
+.headerLight .signIn:hover {
+  color: #0b4a47;
+}
+.headerLight .menuToggle {
+  color: #063231;
+}
+.headerLight .mobileNav a {
+  color: #f7faf9;
+}
+.footerBrand .footerCompactLogo {
+  width: 80px;
+  height: 65px;
+}
+.footerCompactLogo img {
+  width: 133.83%;
+  height: 163.71%;
+  left: -17.29%;
+  top: -29.37%;
 }
