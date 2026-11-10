@@ -14,8 +14,6 @@
 /coverage
 
 # environment
-.env
-.env.*
 !.env.example
 
 # next.js
@@ -45,3 +43,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.history
+config.bat

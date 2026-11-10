@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
-    "start": "next start",
+    "dev": "node init && next dev --webpack",
+    "build": "node init && next build --webpack",
+    "start": "node init && next start",
     "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -93,7 +93,7 @@
   "packageManager": "npm@10.9.7",
   "engines": {
     "node": ">=22.22.2 <23",
-    "npm": "10.9.7"
+    "npm": ">=10.9.7 <10.10.0"
   },
   "overrides": {
     "glob@>=9 <14.0.2": "14.0.4",

@@ -29,7 +29,8 @@ Compatibility exceptions:
 - ESLint 9.39.5: Next's current React/import/accessibility plugins do not declare ESLint 10 support. ESLint 9 is deprecated upstream; revisit when these plugin peer ranges support 10.
 - Node type declarations 22.20.5 match the supported Node 22 runtime instead of advertising Node 26 APIs.
 
-The existing Node 22 environment is pinned to 22.22.2 with npm 10.9.7.
+The local and CI Node 22 environment is pinned to 22.22.2 with npm 10.9.7;
+the engine constraint also permits later npm 10.9.x releases used by hosting providers.
 The shadcn generator is development-only. Redundant jsPDF types and unused ts-jest
 were removed; Next/Jest uses SWC. Production dependency count fell from 566 to 224
 in the full lockfile audit metadata; this is not a measured bundle-size reduction.

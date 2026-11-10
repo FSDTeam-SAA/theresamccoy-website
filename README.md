@@ -105,7 +105,7 @@ src/
 ### Prerequisites
 
 - Node.js 22.22.2 (see `.nvmrc`)
-- npm 10.9.7 (the authoritative lockfile is `package-lock.json`)
+- npm 10.9.7 or a later 10.9.x release (the authoritative lockfile is `package-lock.json`)
 
 ### 1. Clone the repository
 
