@@ -28,6 +28,7 @@ const loginResponseSchema = z.object({
 });
 
 const handler = NextAuth({
+  pages: { signIn: "/login" },
   providers: [
     CredentialsProvider({
       name: "Credentials",

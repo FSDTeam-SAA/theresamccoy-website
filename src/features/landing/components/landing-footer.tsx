@@ -70,7 +70,7 @@ export function LandingFooter({
           <div>
             <h3>Support</h3>
             <nav aria-label="Support" className={styles.footerLinks}>
-              <Link href="/#apply">Bookkeeper</Link>
+              <Link href="/apply">Bookkeeper</Link>
               <Link href="/marketplace">Explore</Link>
             </nav>
           </div>

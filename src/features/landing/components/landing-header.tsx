@@ -12,7 +12,7 @@ export function LandingHeader({
   active = "Home",
   light = false,
 }: {
-  active?: "Home" | "About" | "Marketplace" | "Training";
+  active?: "Home" | "About" | "Marketplace" | "Training" | "Apply" | "Contact";
   light?: boolean;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,11 +45,7 @@ export function LandingHeader({
         ))}
       </nav>
       <div className={styles.headerActions}>
-        <Link
-          className={styles.signIn}
-          href="/api/auth/signin"
-          prefetch={false}
-        >
+        <Link className={styles.signIn} href="/login" prefetch={false}>
           Sign In
         </Link>
         <Button asChild className={styles.pill}>
@@ -85,7 +81,7 @@ export function LandingHeader({
               {label}
             </Link>
           ))}
-          <Link href="/api/auth/signin" prefetch={false}>
+          <Link href="/login" prefetch={false}>
             Sign In
           </Link>
         </nav>

@@ -10,7 +10,7 @@ export function SiteShell({
   children,
   header = true,
 }: {
-  active: "About" | "Marketplace" | "Training";
+  active: "About" | "Marketplace" | "Training" | "Apply" | "Contact";
   children: ReactNode;
   header?: boolean;
 }) {

@@ -52,8 +52,8 @@ export const navigation = [
   { label: "About", href: "/about" },
   { label: "Marketplace", href: "/marketplace" },
   { label: "Training", href: "/training" },
-  { label: "Apply", href: "/#apply" },
-  { label: "Contact", href: "#contact" },
+  { label: "Apply", href: "/apply" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const processSteps = [

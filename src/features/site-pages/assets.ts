@@ -33,4 +33,13 @@ export const pageAssets = {
   tierCheckLight: "/images/pages/11167-1625-imgFrame1.svg",
   marketFooterLogo: "/images/pages/11167-1752-imgImage148.png",
   marketFacebook: "/images/pages/11167-1752-imgFacebook.svg",
+  applySite: "/images/apply/imgRectangle9.png",
+  applyEngineer: "/images/apply/imgRectangle8.png",
+  applyRail: "/images/apply/imgGroup2085662889.svg",
+  applySparkle: "/images/apply/imgFrame.svg",
+  applyHourglass: "/images/apply/imgFrame1.svg",
+  contactHero: "/images/contact/hero.jpg",
+  contactInstagram: "/images/contact/instagram.svg",
+  contactFacebook: "/images/contact/facebook.svg",
+  contactLinkedin: "/images/contact/linkedin.svg",
 } as const;

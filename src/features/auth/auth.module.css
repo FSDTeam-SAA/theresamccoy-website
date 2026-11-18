@@ -1,0 +1,503 @@
+.shell {
+  --page-bg: #f7faf9;
+  --teal: #063231;
+  --teal-light: #0b4a47;
+  --muted-text: #5f7275;
+  --field-border: #c0c3c1;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 54.167% 1fr;
+  background: var(--page-bg);
+  color: var(--teal);
+  font-family: var(--font-onest), sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.shell :is(a, button, input):focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+.artwork {
+  position: sticky;
+  top: 24px;
+  height: calc(100svh - 48px);
+  margin: 24px 0 24px 24px;
+  align-self: start;
+}
+.artworkImage {
+  object-fit: fill;
+}
+.artworkMedia {
+  position: absolute;
+  inset: 0;
+}
+.navigation a {
+  position: absolute;
+  left: 84.35%;
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  color: var(--page-bg);
+  font-size: clamp(20px, 1.875vw, 36px);
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  transform: translateY(-50%);
+}
+.navigation a:first-child {
+  top: 36.12%;
+}
+.navigation a:last-child {
+  top: 49.23%;
+}
+.signupArtwork .navigation a:first-child {
+  top: 38.88%;
+}
+.signupArtwork .navigation a:last-child {
+  top: 53.74%;
+}
+.navigation a[aria-current="page"] {
+  color: var(--teal);
+}
+.content {
+  position: relative;
+  min-width: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 100px 24px;
+}
+.home {
+  position: absolute;
+  top: 29px;
+  right: max(24px, calc((100vw - 1536px) / 2));
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted-text);
+  font-size: 16px;
+  white-space: nowrap;
+}
+.card {
+  width: 100%;
+  max-width: 496px;
+  margin-left: 0;
+  padding: 24px;
+  border-radius: 8px;
+  background: #fff;
+}
+.form,
+.success {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.success {
+  gap: 48px;
+}
+.heading {
+  text-align: center;
+}
+.heading h1 {
+  margin: 0;
+  color: var(--teal);
+  font-family: var(--font-hanken), sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.heading p {
+  margin: 12px 0 0;
+  color: var(--muted-text);
+  font-size: 16px;
+}
+.signupHeading h1 {
+  font-family: var(--font-caslon), serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 32px;
+}
+.signupHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.accountTypes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 12px;
+  border: 0;
+  border-radius: 4px;
+  background: #0b4a470d;
+}
+.accountTypes button {
+  min-height: 46px;
+  padding: 12px 4px;
+  border-radius: 4px;
+  color: var(--teal);
+  font-family: var(--font-syne), var(--font-onest), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.accountTypes button[aria-pressed="true"] {
+  background: #e7eded;
+  box-shadow: 0 4px 6px #0632311a;
+}
+.businessTypes {
+  padding: 8px;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+.nameFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+.label {
+  color: #4d4d4d;
+  font-size: 16px;
+  font-weight: 500;
+}
+.inputWrap {
+  position: relative;
+}
+.inputWrap .input {
+  height: 48px;
+  padding: 8px 12px;
+  border: 1px solid var(--field-border);
+  border-radius: 100px;
+  color: var(--teal);
+  background: #fff;
+  font: inherit;
+  font-size: 16px;
+  box-shadow: none;
+  transition: none;
+}
+.input::placeholder {
+  color: #767676;
+  opacity: 1;
+}
+.inputWrap .passwordInput {
+  padding-right: 52px;
+}
+.inputWrap .input[aria-invalid="true"] {
+  border-color: #a12626;
+}
+.reveal {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.loginFields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.loginOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 16px;
+}
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #767676;
+  cursor: pointer;
+}
+.remember input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--teal);
+}
+.textLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.form .submit,
+.success .submit {
+  width: 100%;
+  height: 54px;
+  padding: 10px;
+  border-radius: 100px;
+  background: var(--teal);
+  color: #e7eded;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  transition:
+    transform 160ms var(--ease-out),
+    opacity 160ms ease;
+}
+.form .businessSubmit {
+  border-radius: 8px;
+}
+.submit:active:not(:focus-visible) {
+  transform: scale(0.97);
+}
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+.footer {
+  text-align: center;
+  color: #343a40;
+  font-size: 16px;
+}
+.footer a {
+  font-weight: 600;
+  color: var(--teal);
+}
+.loginForm .footer {
+  line-height: 1.5;
+}
+.fieldError,
+.notice {
+  font-size: 14px;
+  color: #a12626;
+  line-height: 1.5;
+}
+.notice {
+  border: 1px solid #a1262633;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff8f6;
+}
+.errorSummary {
+  margin-bottom: 24px;
+}
+.errorSummary ul {
+  margin: 4px 0 0;
+  padding-left: 20px;
+}
+.errorSummary a {
+  text-decoration: underline;
+}
+.otp {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.otpControl {
+  position: relative;
+}
+.otpInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: text;
+}
+.otpSlots {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+  pointer-events: none;
+}
+.otpSlots span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 2px solid var(--field-border);
+  border-radius: 50%;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.otpSlots span[data-filled="true"] {
+  border-color: var(--teal);
+}
+.otpControl:focus-within .otpSlots {
+  outline: 2px solid var(--teal);
+  outline-offset: 5px;
+  border-radius: 30px;
+}
+.otpMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 16px;
+  font-family: var(--font-poppins), sans-serif;
+}
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #6c757d;
+}
+.resend {
+  cursor: pointer;
+  color: var(--teal);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.resend:disabled {
+  cursor: default;
+  color: var(--muted-text);
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (hover: hover) and (pointer: fine) {
+  .submit:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+  .home:hover,
+  .footer a:hover,
+  .textLink:hover {
+    text-decoration: underline;
+  }
+}
+@media (max-width: 1199px) {
+  .shell {
+    grid-template-columns: 46% 54%;
+  }
+  .navigation a {
+    left: 80%;
+    font-size: 20px;
+  }
+  .card {
+    padding: 24px 20px;
+  }
+  .accountTypes {
+    gap: 8px;
+    padding: 8px;
+  }
+  .accountTypes button {
+    font-size: 15px;
+  }
+  .otpSlots {
+    gap: 12px;
+  }
+  .otpMeta {
+    font-size: 13px;
+  }
+}
+@media (max-width: 799px) {
+  .shell {
+    display: flex;
+    flex-direction: column;
+  }
+  .artwork {
+    position: relative;
+    top: auto;
+    height: auto;
+    margin: 0;
+    width: 100%;
+    padding: 24px 24px 0;
+  }
+  .artworkMedia {
+    display: none;
+  }
+  .navigation {
+    display: flex;
+    gap: 24px;
+    padding-top: 44px;
+  }
+  .navigation a {
+    position: static;
+    transform: none;
+    color: var(--muted-text);
+    font-size: 20px;
+    min-height: 44px;
+    border-bottom: 2px solid transparent;
+  }
+  .navigation a[aria-current="page"] {
+    border-color: var(--teal);
+  }
+  .content {
+    min-height: 0;
+    flex: 1;
+    padding: 24px 20px 48px;
+  }
+  .home {
+    position: fixed;
+    z-index: 1;
+    top: 8px;
+    right: 24px;
+  }
+  .card {
+    max-width: 496px;
+    padding: 24px;
+  }
+  .heading h1 {
+    font-size: 36px;
+  }
+  .signupHeading h1 {
+    font-size: 28px;
+  }
+  .accountTypes button {
+    font-size: clamp(12px, 3.4vw, 16px);
+  }
+  .loginOptions,
+  .otpMeta {
+    font-size: 14px;
+  }
+  .otpSlots {
+    gap: 12px;
+  }
+}
+@media (max-width: 379px) {
+  .content {
+    padding-inline: 12px;
+  }
+  .card {
+    padding: 24px 16px;
+  }
+  .accountTypes {
+    gap: 4px;
+  }
+  .accountTypes button {
+    font-size: 13px;
+  }
+  .nameFields {
+    gap: 12px;
+  }
+  .loginOptions {
+    font-size: 12px;
+  }
+  .otpSlots {
+    gap: 8px;
+  }
+  .otpMeta {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .form .submit,
+  .success .submit {
+    transition: opacity 160ms ease;
+  }
+  .submit:active:not(:focus-visible) {
+    transform: none;
+  }
+}

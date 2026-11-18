@@ -198,7 +198,7 @@ export function TrainingPage() {
                   </div>
                 ))}
               </dl>
-              <Link href="/#apply">
+              <Link href="/apply">
                 Apply For This Path{" "}
                 <ArrowUp
                   aria-hidden="true"
